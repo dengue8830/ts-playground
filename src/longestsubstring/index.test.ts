@@ -1,5 +1,7 @@
 import { lengthOfLongestSubstring } from "./index";
 
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/
+
 test("longest substring #1", () => {
   expect(lengthOfLongestSubstring("abcabcbb")).toBe(3);
 });
