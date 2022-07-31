@@ -9,5 +9,5 @@ test("longest substring #2", () => {
 });
 
 test("longest substring #3", () => {
-  expect(lengthOfLongestSubstring("pwwkew")).toBe(2);
+  expect(lengthOfLongestSubstring("pwwkew")).toBe(3);
 });
