@@ -4,12 +4,17 @@ function maxLength(tries: string[]) {
 
 export function lengthOfLongestSubstring(s: string): number {
   const tries: string[] = [""];
-  for (const char of s) {
+  let head = 0;
+  for (let i = 0; i < s.length; ) {
+    const char = s[i];
     const last = tries.length - 1;
     if (tries[last].includes(char)) {
-      tries.push(char);
+      tries.push("");
+      head++;
+      i = head;
     } else {
       tries[last] += char;
+      i++;
     }
   }
 

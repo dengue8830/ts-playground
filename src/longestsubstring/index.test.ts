@@ -11,3 +11,7 @@ test("longest substring #2", () => {
 test("longest substring #3", () => {
   expect(lengthOfLongestSubstring("pwwkew")).toBe(3);
 });
+
+test("longest substring #4", () => {
+  expect(lengthOfLongestSubstring("dvdf")).toBe(3);
+});
