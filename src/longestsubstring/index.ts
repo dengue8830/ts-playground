@@ -1,22 +1,21 @@
-function maxLength(tries: string[]) {
-  return tries.map((item) => item.length).sort((a, b) => b - a)[0];
-}
-
 export function lengthOfLongestSubstring(s: string): number {
-  const tries: string[] = [""];
+  let substring = "";
+  let maxSubstring = "";
   let head = 0;
   for (let i = 0; i < s.length; ) {
     const char = s[i];
-    const last = tries.length - 1;
-    if (tries[last].includes(char)) {
-      tries.push("");
+    if (substring.includes(char)) {
+      substring = "";
       head++;
       i = head;
     } else {
-      tries[last] += char;
+      substring += char;
       i++;
+    }
+    if (substring.length > maxSubstring.length) {
+      maxSubstring = substring;
     }
   }
 
-  return maxLength(tries);
+  return maxSubstring.length;
 }
