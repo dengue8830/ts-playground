@@ -12,7 +12,6 @@ export function lengthOfLongestSubstring(s: string): number {
       tries[last] += char;
     }
   }
-  console.log(tries);
 
   return maxLength(tries);
 }
