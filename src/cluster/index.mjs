@@ -15,17 +15,17 @@ if (cluster.isPrimary) {
     // w.on("online", () => {
     // w.send({ data: "hola" });
     // });
-    // 🙅‍♂️ This works is error prone since it relies on the execution order of event loop.
-    // setTimeout(() => {
-    //   w.send({ data: "hola" });
-    // }, 100);
+    // 🙅‍♂️ This works but is too hacky, should be a better way.
+    setTimeout(() => {
+      w.send({ data: "hola" });
+    }, 100);
   }
-  // ✅ This works.
-  cluster.on("online", () => {
-    Object.values(cluster.workers).forEach((w) => {
-      w.send({ data: "hi there" });
-    });
-  });
+  // ❌ Doesn't work.
+  // cluster.on("online", () => {
+  //   Object.values(cluster.workers).forEach((w) => {
+  //     w.send({ data: "hi there" });
+  //   });
+  // });
 } else {
   process.on("message", (msg) => {
     // Do initial work with msg data.
