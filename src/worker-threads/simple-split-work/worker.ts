@@ -1,7 +1,5 @@
-// import { parentPort, workerData } from "node:worker_threads";
-const { parentPort, workerData } = require("node:worker_threads");
-// console.log("worker: ", workerData);
+// const { parentPort, workerData } = require("node:worker_threads");
 
-parentPort?.postMessage(
-  workerData.reduce((prev, current) => prev + current, 0)
-);
+// parentPort?.postMessage(
+//   workerData.reduce((prev, current) => prev + current, 0)
+// );
